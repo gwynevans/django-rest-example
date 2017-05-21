@@ -1,0 +1,26 @@
+{% extends "items/base.html" %}
+
+{% block title %}Location Detail{% endblock %}
+
+{% block body_block %}
+
+<div class="jumbotron">
+
+<h1>Location Details</h1>
+<ol>
+    <li>Name: {{ location.name }}</li>
+    <li>Tasks:
+        <ul>
+        {% for task in location.tasks.all %}
+            <li>{{ task.title }}</li>
+        {% endfor %}
+        </ul>
+    </li>
+</ol>
+</div>
+<div class="container">
+    <p>
+        <a class="btn btn-warning" href="{% url 'items:location-update' pk=location.pk %}">Update</a>
+    </p>
+</div>
+{% endblock %}

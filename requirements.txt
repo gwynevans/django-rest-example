@@ -1,0 +1,7 @@
+Django==1.11.1
+djangorestframework==3.6.3
+drf-nested-routers==0.90.0
+httpie==0.9.9
+Pygments==2.2.0
+pytz==2017.2
+requests==2.14.2

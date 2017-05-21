@@ -1,0 +1,26 @@
+{% extends "items/base.html" %}
+
+{% block title %}Location{% endblock %}
+
+{% block body_block %}
+<div class="container-fluid">
+    <div class="row">
+        <h1>
+        {% if not form.instance.pk %}
+            New Location
+        {% else %}
+            Update Location
+        {% endif %}
+        </h1>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <form method="post" class="form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" class="btn btn-primary" value="Submit">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

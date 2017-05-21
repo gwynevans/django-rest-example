@@ -1,0 +1,21 @@
+{% extends "items/base.html" %}
+
+{% block title %}Location List{% endblock %}
+
+{% block body_block %}
+<div class="container-fluid">
+    <div class="row">
+        <h1>List of locations</h1>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <ul class="list-group">
+                {% for l in location_list %}
+                <li class="list-group-item"><a href="{{ l.id }}">{{ l.name }}</a></li>
+                {% endfor %}
+            </ul>
+            <a class="btn btn-success" href="{% url 'items:location-create'%}">Add Location</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
